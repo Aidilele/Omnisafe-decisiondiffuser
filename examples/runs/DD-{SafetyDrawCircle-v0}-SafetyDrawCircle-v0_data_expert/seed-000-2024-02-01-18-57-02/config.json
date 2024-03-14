@@ -1,0 +1,85 @@
+{
+    "seed": 0,
+    "train_cfgs": {
+        "device": "cuda:0",
+        "torch_threads": 16,
+        "total_steps": 1000000,
+        "dataset": "SafetyDrawCircle-v0_data_expert",
+        "evaluate_epoisodes": 0,
+        "parallel": 1,
+        "vector_env_nums": 1,
+        "loss_type": "l2",
+        "gradient_accumulate_every": 2,
+        "epochs": 1000
+    },
+    "algo_cfgs": {
+        "gamma": 0.99,
+        "batch_size": 32,
+        "steps_per_epoch": 1000,
+        "obs_normalize": false,
+        "horizon": 64,
+        "history_length": 1,
+        "constraints_dim": 2,
+        "skills_dim": 2,
+        "n_diffusion_steps": 100,
+        "multi_step_pred": 50
+    },
+    "logger_cfgs": {
+        "use_wandb": false,
+        "wandb_project": "omnisafe",
+        "use_tensorboard": true,
+        "save_model_freq": 1,
+        "log_dir": "./runs"
+    },
+    "model_cfgs": {
+        "weight_initialization_mode": "kaiming_uniform",
+        "returns_condition": true,
+        "lr": 0.0002,
+        "actor_type": "decisiondiffuser",
+        "actor": 0,
+        "diffuser_model": {
+            "train_only_inv": false,
+            "action_weight": 10,
+            "loss_weights": "None",
+            "loss_discount": 1,
+            "predict_epsilon": true,
+            "test_ret": 0.9,
+            "hidden_dim": 64,
+            "clip_denoised": true,
+            "condition_guidance_w": 1.0
+        },
+        "temporalU_model": {
+            "dim_mults": [
+                1,
+                4,
+                8
+            ],
+            "calc_energy": false,
+            "dim": 64,
+            "condition_dropout": 0.25
+        }
+    },
+    "dataset_cfgs": {
+        "use_padding": true,
+        "include_returns": true,
+        "include_constraints": true,
+        "include_skills": true,
+        "returns_scale": 100.0
+    },
+    "evaluate_cfgs": {
+        "returns": 0.9,
+        "constraints": [
+            1,
+            1
+        ],
+        "skills": [
+            1,
+            1
+        ],
+        "obs_history_length": 1,
+        "multi_step_pred": 50
+    },
+    "exp_name": "DD-{SafetyDrawCircle-v0}",
+    "env_id": "SafetyDrawCircle-v0",
+    "algo": "DD"
+}
