@@ -68,7 +68,7 @@ SafetyDrawCircle支持两种动作值控制方式：速度控制和加速度控�
 
 实验环境可视化如下图所示:
 
-![Screenshot 2024-03-20 214011.png](Screenshot%202024-03-20%20214011.png)
+![Screenshot 2024-03-20 214011.png](resource/Screenshot%202024-03-20%20214011.png)
 
 整个可视平面坐标(x,y)范围是<-1,1>,
 
