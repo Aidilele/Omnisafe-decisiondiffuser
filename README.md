@@ -153,4 +153,5 @@ MSP50生成的圆周轨迹半径变化很大，而MSP20生成的轨迹半径变�
 （实验中的环境DynamicModel是一个速度-位移关系，比较容易拟合。）
 
 实验数据及模型文件[runs](https://drive.google.com/file/d/1m0l23SZMMaKVCUiogxA18NbH8gSBlSLz/view?usp=drive_link)
+将runs.7z中的runs-copy解压到example/runs路径下（与omnisafe保持一致).
 
