@@ -1,6 +1,6 @@
 # Omnisafe-decisiondiffuser
 
-#这个repo是基于omnisafe框架进行重新开发的，
+这个repo是基于omnisafe框架进行重新开发的，
 使用omnisafe框架实现了DecisionDiffuser算法的复现。
 我单独开发了一个新环境SafetyDrawCircle用于实验。该环境开发过程中与omnisafe进行了对齐。
 由于DD算法是一个offline算法，因此我基于SafetyDrawCircle创建了一个数据集用于算法的训练。
@@ -152,5 +152,7 @@ MSP50生成的圆周轨迹半径变化很大，而MSP20生成的轨迹半径变�
 尤其当环境的DynamicModel过于复杂时，多步预测的误差将变得很大，MSP的选取应当保守。
 （实验中的环境DynamicModel是一个速度-位移关系，比较容易拟合。）
 
+实验数据及模型文件[runs](https://drive.google.com/file/d/1m0l23SZMMaKVCUiogxA18NbH8gSBlSLz/view?usp=drive_link)。
 
+将runs.7z中的runs-copy解压到example/runs路径下（与omnisafe保持一致).
 
